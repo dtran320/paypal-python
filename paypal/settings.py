@@ -43,7 +43,7 @@ class PayPalConfig(object):
         'PRODUCTION': 'https://www.paypal.com/webscr',
     }
 
-    API_VERSION = '72.0'
+    API_VERSION = '98.0'
 
     # Defaults. Used in the absence of user-specified values.
     API_ENVIRONMENT = 'SANDBOX'
@@ -111,8 +111,7 @@ class PayPalConfig(object):
         if kwargs.get('API_CA_CERTS'):
             self.API_CA_CERTS = kwargs['API_CA_CERTS']
 
-            if isinstance(self.API_CA_CERTS, basestring) and \
-               not os.path.exists(self.API_CA_CERTS):
+            if isinstance(self.API_CA_CERTS, basestring) and not os.path.exists(self.API_CA_CERTS):
                 # A CA Cert path was specified, but it's invalid.
                 raise PayPalConfigError('Invalid API_CA_CERTS')
 
