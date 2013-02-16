@@ -62,7 +62,7 @@ class PayPalConfig(object):
     # certificate check on the endpoint. If it's a full path, verify against
     # a private cert.
     # e.g. '/etc/ssl/certs/Verisign_Class_3_Public_Primary_Certification_Authority.pem'
-    API_CA_CERTS = True
+    API_CA_CERTS = None
 
     # UNIPAY credentials
     UNIPAY_SUBJECT = None
